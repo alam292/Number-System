@@ -1,1 +1,29 @@
+import java.util.*;
+
+public class binary_decimal {
+
+    public static void BinaryToDecimal(int number){
+
+        int myNum = number;
+        int pow = 0;
+        int deciNum = 0;
+
+        while(number>0){
+            int lastDigit = number%10;
+            deciNum = deciNum + (lastDigit*(int)Math.pow(2,pow));
+            pow++;
+            number = number/10;
+        }
+        System.out.println("Decimal Number form of "+myNum+" = "+ deciNum);
+    }
+    
+    public static void main(String[]args){
+
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Enter a binary number : ");
+        int number = sc.nextInt();
+
+        BinaryToDecimal(number);
+    }
+}
 
